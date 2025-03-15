@@ -63,6 +63,14 @@ A web application for reporting and tracking potholes, designed as both a functi
 - Integrated Firebase for real-time data updates
 - Developed dynamic features including address autocomplete and reverse geocoding
 
+### [RepForTeachingHackRPI](https://github.com/Jordan231111/RepForTeachingHackRPI) (2023)
+Repository created for teaching Git workflows and React component development at HackRPI.
+
+- Created educational materials for hackathon participants
+- Demonstrated pull request workflows and code review processes
+- Built example React components for teaching purposes
+- Managed branch structure to illustrate proper development practices
+
 ## 🎓 Education & Learning
 Continuously improving through hands-on projects, online courses, and technical challenges. I believe in practical education and building real-world experience.
 
