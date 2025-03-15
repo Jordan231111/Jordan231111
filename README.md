@@ -4,6 +4,11 @@
 
 I build robust applications and utilities that solve real-world problems with a focus on security, performance, and usability.
 
+## 📊 GitHub Stats
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jordan231111&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Jordan231111&layout=compact&theme=tokyonight)
+
 ## 🔧 Technical Skills
 
 ### Languages
@@ -87,11 +92,6 @@ I'm constantly expanding my knowledge in:
 - Cloud infrastructure and deployment strategies
 - Mobile application development
 - Algorithm optimization and performance tuning
-
-## 📊 GitHub Stats
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=jordan231111&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Jordan231111&layout=compact&theme=tokyonight)
 
 ## 🤝 Let's Connect
 
