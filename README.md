@@ -97,7 +97,7 @@ I'm constantly expanding my knowledge in:
 
 I'm always open to collaborating on interesting projects, discussing technology, or helping with technical challenges.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://www.linkedin.com/in/yourlinkedin/](https://www.linkedin.com/in/jordan-ye-100b86237/))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jordan-ye-100b86237/))
 [![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/YUF4ArVfpQ)
 
 ---
