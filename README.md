@@ -6,7 +6,7 @@ I build robust applications and utilities that solve real-world problems with a 
 
 ## 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true)
+![GitHub Stats](https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&v=2)
 ![Top Languages](https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&theme=tokyonight)
 
 ## 🔧 Technical Skills
