@@ -1,105 +1,67 @@
-# 👋 Hello, I'm Jordan
+# Jordan Ye
 
-## 💻 Full-Stack Developer | 🛡️ Cybersecurity Enthusiast | 🧰 System Tooling Developer
+RPI Computer Science + Mathematics student focused on Android game-runtime systems, AI model
+evaluation, security tooling, and full-stack software.
 
-I build robust applications and utilities that solve real-world problems with a focus on security, performance, and usability.
+I have 5+ years of independent Android game modding and runtime systems experience. My strongest
+work is below the editor layer: Unity IL2CPP, Cocos2d-x/Lua, LSPosed/Xposed modules, native C++
+hooks, metadata-based method and field resolution, emulator/root tooling, movement and collision
+logic, game-loop modification, and runtime instrumentation.
 
-## 📊 GitHub Stats
+Current role: AI Model Evaluation Contractor through Handshake AI.
 
-![GitHub Stats](https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&v=2)
-![Top Languages](https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&theme=tokyonight)
+## Game Runtime Systems Portfolio
 
-## 🔧 Technical Skills
+Primary portfolio index:
 
-### Languages
-![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+https://github.com/Jordan231111/android-game-runtime-portfolio
 
-### Frameworks & Technologies
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+### High-Signal Work Samples
 
-### Areas of Expertise
-- System Administration & Automation
-- Android Customization & Rooting
-- Cross-Platform Development
-- Cybersecurity Tools
-- Modern Web Development
-- Performance Optimization
+| Project | Focus |
+| --- | --- |
+| [Archero-LSPOSED-Mod](https://github.com/Jordan231111/Archero-LSPOSED-Mod) | Unity IL2CPP Android runtime hooks, native C++ game-loop instrumentation, metadata-based resolution, movement/collision/projectile systems, device-verified hook status. |
+| [arm64-houdini-lsposed-framework](https://github.com/Jordan231111/arm64-houdini-lsposed-framework) | ARM64 guest-code instrumentation framework for native-bridge / Houdini emulator environments, alias-aware patching, module scanning, verifier workflows. |
+| [lsposed-universal-template](https://github.com/Jordan231111/lsposed-universal-template) | Reusable LSPosed/Xposed runtime instrumentation scaffold with engine detection, native utilities, overlay controls, and feature toggles. |
+| [BluestacksRoot](https://github.com/Jordan231111/BluestacksRoot) | Android emulator/root automation, Magisk setup, and repeatable device-tooling workflows. |
+| [mumu-magisk-1click](https://github.com/Jordan231111/mumu-magisk-1click) | MuMu emulator + Magisk/root automation using PowerShell and batch tooling. |
+| [MalwareMinimizer](https://github.com/Jordan231111/MalwareMinimizer) | Rust security/tooling project with cross-platform CLI architecture, scanning, quarantine, update workflows, CI, and tests. |
 
-## 🚀 Featured Projects
+Private advanced walkthroughs available on request:
 
-### [Malware Minimizer](https://github.com/Jordan231111/MalwareMinimizer)
-A cross-platform, command-line malware scanning and removal tool that provides users with accessible cybersecurity protection.
+- `ae-pcd-stamp-tracer`: Cocos2d-x/Lua + native Android runtime instrumentation, engine detection,
+  Lua-load tracing, dialogue/timer fast-iteration research, and game-state tooling relevant to
+  AI-agent evaluation workflows.
+- `lsposed-houdini-rogue-recovery`: Houdini-compatible rewrite planning for native game-runtime hooks.
 
-- **Tech Stack**: Rust, Python, C++
-- **Key Features**:
-  - Fast & deep malware scanning capabilities
-  - Quarantine and removal functionality
-  - Automated signature database updates
-  - Optimized for performance across multiple platforms
+## Technical Strengths
 
-### [HackRPI Website Contributor](https://github.com/hack-rpi/HackRPI-Website-2025)
-Contributed to the official website for Rensselaer Polytechnic Institute's annual hackathon, serving as Junior Director of Technology.
+- Android runtime instrumentation: LSPosed, Xposed, Zygisk-adjacent tooling, NDK, JNI
+- Game engines and runtimes: Unity IL2CPP, Cocos2d-x/Lua, engine detection for Godot/Unreal/Cocos/Unity
+- Native systems: C++, C, ARM64, CMake, pattern scanning, symbol resolution, memory-map analysis
+- Automation and device tooling: BlueStacks, MuMu, Magisk/root workflows, ADB, emulator setup
+- Software engineering: Rust, Python, Java, JavaScript, TypeScript, React, Next.js, Firebase, MongoDB
+- AI evaluation: prompt/response comparison, instruction-following assessment, data labeling, written feedback
 
-- **Tech Stack**: Next.js, React, TailwindCSS, TypeScript, AWS Amplify
-- **Key Features**:
-  - Created and implemented Jest test files and configurations
-  - Developed responsive UI components for event information
-  - Collaborated with team using Git workflow and CI/CD practices
-  - Enhanced user experience for hackathon participants
+## Broader Software Work
 
-### [BluestacksRoot](https://github.com/Jordan231111/BluestacksRoot)
-A utility for easily rooting Bluestacks 5 emulator and bypassing restrictions in newer versions.
+### HackRPI Website
 
-- **Tech Stack**: Batch scripting, Android tooling
-- **Key Features**:
-  - Automated rooting process with simple commands
-  - Compatible with various Android versions in Bluestacks
-  - Custom junction point management for dual-mode operation
-  - Integration with Magisk for advanced root capabilities
+Contributed to the official website for Rensselaer Polytechnic Institute's annual hackathon using
+Next.js, React, TypeScript, Tailwind CSS, MongoDB, AWS Amplify, React Query, tRPC, Jest, Playwright,
+and GitHub Actions.
 
-### [MiniEvent2024](https://github.com/Jordan231111/MiniEvent2024)
-A web application for reporting and tracking potholes, designed both as a functional tool and educational resource.
+Repository: https://github.com/Jordan231111/HackRPI-Website-2025
 
-- **Tech Stack**: HTML/CSS/JavaScript, Leaflet.js, Firebase, Nominatim API
-- **Key Features**:
-  - Interactive mapping with Leaflet.js
-  - Responsive design for all device sizes
-  - Real-time data updates via Firebase
-  - Address autocomplete and reverse geocoding
-  - Structured as a teaching resource with basic and advanced versions
+### CommUnity
 
-## 📚 Education & Continuous Learning
+Full-stack civic-tech application using HTML, CSS, JavaScript, Firebase, Flask, and the OpenAI API
+to support AI-assisted community outreach workflows.
 
-I'm constantly expanding my knowledge in:
-- Advanced system programming
-- Security research and vulnerability assessment
-- Cloud infrastructure and deployment strategies
-- Mobile application development
-- Algorithm optimization and performance tuning
+Repository: https://github.com/Jordan231111/CommUnity
 
-## 🤝 Let's Connect
+## Links
 
-I'm always open to collaborating on interesting projects, discussing technology, or helping with technical challenges.
+- LinkedIn: https://www.linkedin.com/in/jordan-ye-100b86237/
+- GitHub: https://github.com/Jordan231111
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jordan-ye-100b86237/)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/YUF4ArVfpQ)
-
----
-
-💬 *"The best way to predict the future is to invent it."* - Alan Kay
