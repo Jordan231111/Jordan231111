@@ -250,3 +250,10 @@ front-end, Firebase auth/db, Flask back-end, OpenAI API for AI-assisted outreach
 ![Top Languages](https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&theme=tokyonight&v=3)
 
 </div>
+
+---
+
+## Contact
+
+- **Email** — yejordan8888@gmail.com
+- **LinkedIn** — [jordan-ye-100b86237](https://www.linkedin.com/in/jordan-ye-100b86237/)
