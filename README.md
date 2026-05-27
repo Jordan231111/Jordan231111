@@ -20,23 +20,167 @@ LSPosed/Xposed modules, IL2CPP metadata, `/proc/self/maps` parsing, pattern scan
 resolution, page-permission-aware patching, and the verification scaffolding that keeps that work
 honest.
 
+---
+
 ## Flagship
 
-| Project | Stack | What it shows |
-| --- | --- | --- |
-| **[ae-pcd-stamp-tracer (case study)](https://github.com/Jordan231111/ae-pcd-stamp-tracer-public)** | C++ · Java · Lua · Python · NDK · ~10K+ LOC · 5 years | Engine-neutral runtime instrumentation for a Cocos2d-x / Lua native-heavy Android runtime. The applied layer of a three-tier engineering trajectory (reusable template → ARM64/Houdini specialization → target-specific application). The full case study covers 7 specific engineering problems with their solutions, architecture lineage, and verification-first design principles. Private repo; live walk-through available. |
+<table>
+<tr><td>
 
-## Featured Engineering
+### **[ae-pcd-stamp-tracer — Case Study](https://github.com/Jordan231111/ae-pcd-stamp-tracer-public)**
 
-| Project | Stack | What it shows |
-| --- | --- | --- |
-| **[arm64-houdini-lsposed-framework](https://github.com/Jordan231111/arm64-houdini-lsposed-framework)** | C++ · Java · NDK · ARM64 | Self-contained ARM64 patching framework with no third-party inline-hook dependency. Implements the 16-byte `ldr x17, #8 / br x17 / <addr>` absolute-branch primitive, Houdini/native-bridge alias-aware writes, `/proc/self/maps` parser, IDA-style ARM64 signature scanner, file-backed code reads for verifier workflows, ELF symbol-table fallback. |
-| **[lsposed-universal-template](https://github.com/Jordan231111/lsposed-universal-template)** | Java · Kotlin DSL · NDK · ShadowHook | Reusable LSPosed module scaffold on the modern `libxposed` API 101. `EngineDetector` classifies Unity / Unreal / Cocos2d-x / Godot / Flutter / React Native / Xamarin. `FeatureRegistry` runtime flags with per-feature overlay. ShadowHook via `JNI_OnLoad` + `RegisterNatives`. Configure script renames everything in one command. |
-| **[Archero-LSPOSED-Mod](https://github.com/Jordan231111/Archero-LSPOSED-Mod)** | C++ · Java · NDK · Unity IL2CPP | Applied Unity IL2CPP runtime-hook study against a live `arm64-v8a` target. Metadata-driven method/field resolution against `libil2cpp.so`, fail-closed at install time, side-aware managed-type logic, native trampoline placement. Authorized testing only. |
-| **[MalwareMinimizer](https://github.com/Jordan231111/MalwareMinimizer)** ★5 | Rust 2024 · CI/CD · `clap` · `proptest` · `criterion` | Cross-platform malware-scanning CLI. **RCOS Project Lead of a 5-person team** (plus 3 external contributors) — Spring 2026 MVP, presented at the RCOS Spring 2026 showcase. Issue-driven team ownership across architecture/CI/db (me), scanner/quarantine, CLI, utilities, and setup/docs. **174 automated tests** across 6-platform CI (Linux/macOS/Windows × x64/ARM64) with pinned action SHAs, `cargo audit`, `cargo deny`, `cargo supply-chain`, SBOM, and a crates.io-only dependency policy. Atomic DB writes with rollback. Exit code `2` reserved for "found malware." |
-| **[BluestacksRoot](https://github.com/Jordan231111/BluestacksRoot)** ★64 | Batch · C++ · Python | One of the more widely used BlueStacks 5 rooting toolchains. Native Magisk component, semantic + dynamic integrity-check bypass in Python, GitHub Actions release pipeline. |
-| **[mumu-magisk-1click](https://github.com/Jordan231111/mumu-magisk-1click)** ★39 | PowerShell · Batch | MuMu Player 12 root setup. 60KB PowerShell helper. Locates installs from the Windows uninstall registry, patches per-instance config JSON via real parsing (not text replacement), writes `.bak` files before first mutation, supports `--dry-run` and `--edition global\|chinese\|all`. |
-| **[bluestacks-air-oneclick-root](https://github.com/Jordan231111/bluestacks-air-oneclick-root)** | Bash · macOS | BlueStacks Air on macOS. SIP-aware: separate code paths for SIP-enabled and SIP-disabled systems. |
+`C++` · `Java` · `Lua` · `Python` · `NDK` · **~10K+ LOC · 5 years**
+
+Engine-neutral runtime instrumentation for a Cocos2d-x / Lua native-heavy Android runtime. The
+**applied layer** of a three-tier engineering trajectory: reusable template → ARM64/Houdini
+specialization → target-specific application.
+
+The full case study covers:
+- **7 specific engineering problems** with their solutions (engine routing without source, stable
+  observation points over fixed RVAs, Houdini alias-aware patching, JNI symbol-table stealth,
+  fail-closed verification, side-effect-preserving fast iteration, process-scope filtering)
+- Architecture lineage and system-flow diagrams
+- Engineering principles (boundaries over addresses, verification as part of the feature)
+
+Private repo; live walk-through available on request.
+
+</td></tr>
+</table>
+
+---
+
+## Native Instrumentation Foundations
+
+<table>
+<tr><td>
+
+#### **[arm64-houdini-lsposed-framework](https://github.com/Jordan231111/arm64-houdini-lsposed-framework)**
+
+`C++` · `Java` · `Android NDK` · `ARM64`
+
+Self-contained ARM64 patching framework with **no third-party inline-hook dependency** — keeps
+working on Houdini/native-bridge emulators where general libraries refuse to bind their ABI.
+
+- `/proc/self/maps` parser with module range / base helpers
+- IDA-style ARM64 pattern parser and scanner
+- File-backed code reading to verify original ARM64 bytes from mapped APK/SO pages
+- Houdini alias discovery and alias-aware writes
+- `dlopen` / `dlsym` / `RTLD_DEFAULT` / manual ELF symbol-table fallback
+- 16-byte ARM64 absolute branch patch primitive (`ldr x17, #8 / br x17 / <addr>`)
+- Patch records and framework status returned through JNI to a Java overlay
+
+</td></tr>
+<tr><td>
+
+#### **[lsposed-universal-template](https://github.com/Jordan231111/lsposed-universal-template)**
+
+`Java` · `Kotlin DSL` · `NDK` · `ShadowHook`
+
+Reusable LSPosed module scaffold on the modern **libxposed API 101**. Process scope defaults skip
+push, crash, sandbox, and anti-cheat-satellite processes unless explicitly opted in.
+
+- `EngineDetector` classifies Unity / Unreal / Cocos2d-x / Godot / Flutter / React Native /
+  Xamarin from `nativeLibraryDir` first (no `/proc` IO) with `/proc/self/maps` fallback
+- `FeatureRegistry` bool/float runtime flags with overlay-bound toggles and persistence
+- ShadowHook registered via `JNI_OnLoad` + `RegisterNatives` so the `.so` symbol table doesn't
+  advertise package-derived JNI export names
+- R8 obfuscates everything except the LSPosed entry point
+- `configure-template.py` renames package, scope, metadata, and packaged `.so` name in one command
+
+</td></tr>
+<tr><td>
+
+#### **[Archero-LSPOSED-Mod](https://github.com/Jordan231111/Archero-LSPOSED-Mod)**
+
+`C++` · `Java` · `Android NDK` · `Unity IL2CPP`
+
+Applied Unity IL2CPP runtime-hook study against a live `arm64-v8a` target build. The IL2CPP
+counterpart to the Cocos2d-x case study above.
+
+- Metadata-driven method and field resolution against `libil2cpp.so` (no fixed-RVA fallback at
+  install time — fail-closed if a symbol can't be resolved)
+- Side-aware logic in the IL2CPP managed-type system
+- Per-feature toggle architecture with named status counters
+- Native trampoline placement; field discovery on hero bullet collision handlers
+- Authorized testing on owned devices only
+
+</td></tr>
+</table>
+
+---
+
+## Rust Systems
+
+<table>
+<tr><td>
+
+#### **[MalwareMinimizer ★5](https://github.com/Jordan231111/MalwareMinimizer)**
+
+`Rust 2024` · `clap` · `proptest` · `criterion` · `wiremock`
+
+**RCOS Project Lead of a 5-person team** at Rensselaer Center for Open Source — Spring 2026 MVP,
+presented at the RCOS Spring 2026 showcase. 321 commits, 139 PRs, 110 issues — issue-driven team
+ownership, not a one-off demo. Strongest pure-engineering and team-leadership signal in the
+portfolio outside the native-Android stack.
+
+- **Team:** Jordan Ye (architecture / CI / db), Riley Horling (scanner / quarantine), Isaac Child
+  (CLI), Michael Wang (utilities), Alexander Santos (setup / docs) — plus 3 external contributors
+- **CI matrix:** Linux / macOS / Windows × x86_64 / ARM64 with pinned action SHAs
+- **Supply chain:** `cargo audit`, `cargo deny`, `cargo supply-chain`, SBOM generation,
+  `unknown-registry = "deny"`, `unknown-git = "deny"`
+- **Correctness:** atomic database writes with rollback, quarantine-path validation with
+  restrictive permissions, weekly signature-publish workflow with checksummed update artifacts
+- **Testing:** 174 automated tests, property tests via proptest, criterion benchmarks,
+  wiremock-backed HTTP tests
+- **Onboarding:** auto-graded starter-task track for new Rust contributors; `validate_strict.sh`
+  + CODEOWNERS keep the repo consistent without lowering the review bar
+- **CLI contract:** exit code `2` reserved for "found malware" so shells can distinguish detection
+  from runtime failure
+
+</td></tr>
+</table>
+
+---
+
+## Emulator and Device Tooling
+
+<table>
+<tr><td>
+
+#### **[BluestacksRoot ★64](https://github.com/Jordan231111/BluestacksRoot)**
+
+`Batch` · `C++` · `Python` · `GitHub Actions`
+
+One of the more widely used BlueStacks 5 rooting toolchains. Native Magisk component, semantic +
+dynamic integrity-check bypass in Python, full CI release pipeline.
+
+</td></tr>
+<tr><td>
+
+#### **[mumu-magisk-1click ★39](https://github.com/Jordan231111/mumu-magisk-1click)**
+
+`PowerShell` · `Batch`
+
+MuMu Player 12 root setup. 60KB PowerShell helper that locates installs via the Windows uninstall
+registry (not hard-coded paths), patches `customer_config.json` / `vm_config.json` /
+`shell_config.json` via real JSON parsing, writes `.bak` files before first mutation, supports
+`--dry-run` and `--edition global|chinese|all`. CI diffs the bundled installer against MuMu's
+official download API.
+
+</td></tr>
+<tr><td>
+
+#### **[bluestacks-air-oneclick-root](https://github.com/Jordan231111/bluestacks-air-oneclick-root)**
+
+`Bash` · `macOS`
+
+BlueStacks Air on macOS. **SIP-aware:** separate code paths for SIP-enabled (prints the patched
+file path for the user to copy) and SIP-disabled (fully automatic). Single curl-piped installer.
+
+</td></tr>
+</table>
+
+---
 
 ## Leadership
 
@@ -51,6 +195,8 @@ honest.
 - Lead 3+ project leads and 20+ organizers via status check-ins and pull-request code reviews.
 - Partner with the Director of Technology on feature rollouts, deployment cadence, and tooling upgrades.
 
+---
+
 ## Broader Software Work
 
 **[HackRPI 2025](https://github.com/Jordan231111/HackRPI-Website-2025)** — RPI's annual hackathon
@@ -60,9 +206,13 @@ Playwright, GitHub Actions.
 **[CommUnity](https://github.com/Jordan231111/CommUnity)** — Full-stack civic-tech app: HTML/CSS/JS
 front-end, Firebase auth/db, Flask back-end, OpenAI API for AI-assisted outreach workflows.
 
+---
+
 ## Certifications
 
 **AWS Certified Cloud Practitioner** — Issued Jul 2023, valid through Jul 2026
+
+---
 
 ## Stack
 
@@ -89,6 +239,8 @@ front-end, Firebase auth/db, Flask back-end, OpenAI API for AI-assisted outreach
   <img src="https://img.shields.io/badge/AWS_Amplify-FF9900?style=flat-square&logo=awsamplify&logoColor=white" />
   <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" />
 </p>
+
+---
 
 ## GitHub Snapshot
 
