@@ -33,10 +33,23 @@ honest.
 | **[arm64-houdini-lsposed-framework](https://github.com/Jordan231111/arm64-houdini-lsposed-framework)** | C++ · Java · NDK · ARM64 | Self-contained ARM64 patching framework with no third-party inline-hook dependency. Implements the 16-byte `ldr x17, #8 / br x17 / <addr>` absolute-branch primitive, Houdini/native-bridge alias-aware writes, `/proc/self/maps` parser, IDA-style ARM64 signature scanner, file-backed code reads for verifier workflows, ELF symbol-table fallback. |
 | **[lsposed-universal-template](https://github.com/Jordan231111/lsposed-universal-template)** | Java · Kotlin DSL · NDK · ShadowHook | Reusable LSPosed module scaffold on the modern `libxposed` API 101. `EngineDetector` classifies Unity / Unreal / Cocos2d-x / Godot / Flutter / React Native / Xamarin. `FeatureRegistry` runtime flags with per-feature overlay. ShadowHook via `JNI_OnLoad` + `RegisterNatives`. Configure script renames everything in one command. |
 | **[Archero-LSPOSED-Mod](https://github.com/Jordan231111/Archero-LSPOSED-Mod)** | C++ · Java · NDK · Unity IL2CPP | Applied Unity IL2CPP runtime-hook study against a live `arm64-v8a` target. Metadata-driven method/field resolution against `libil2cpp.so`, fail-closed at install time, side-aware managed-type logic, native trampoline placement. Authorized testing only. |
-| **[MalwareMinimizer](https://github.com/Jordan231111/MalwareMinimizer)** ★5 | Rust 2024 · CI/CD · `clap` · `proptest` · `criterion` | Cross-platform malware-scanning CLI. 321 commits, review-driven. CI matrix across Linux/macOS/Windows × x86_64/ARM64 with pinned action SHAs, `cargo audit`, `cargo deny`, `cargo supply-chain`, SBOM, and a crates.io-only dependency policy. Atomic DB writes with rollback. Exit code `2` reserved for "found malware." |
+| **[MalwareMinimizer](https://github.com/Jordan231111/MalwareMinimizer)** ★5 | Rust 2024 · CI/CD · `clap` · `proptest` · `criterion` | Cross-platform malware-scanning CLI. **RCOS Project Lead of a 5-person team** (plus 3 external contributors) — Spring 2026 MVP, presented at the RCOS Spring 2026 showcase. Issue-driven team ownership across architecture/CI/db (me), scanner/quarantine, CLI, utilities, and setup/docs. **174 automated tests** across 6-platform CI (Linux/macOS/Windows × x64/ARM64) with pinned action SHAs, `cargo audit`, `cargo deny`, `cargo supply-chain`, SBOM, and a crates.io-only dependency policy. Atomic DB writes with rollback. Exit code `2` reserved for "found malware." |
 | **[BluestacksRoot](https://github.com/Jordan231111/BluestacksRoot)** ★64 | Batch · C++ · Python | One of the more widely used BlueStacks 5 rooting toolchains. Native Magisk component, semantic + dynamic integrity-check bypass in Python, GitHub Actions release pipeline. |
 | **[mumu-magisk-1click](https://github.com/Jordan231111/mumu-magisk-1click)** ★39 | PowerShell · Batch | MuMu Player 12 root setup. 60KB PowerShell helper. Locates installs from the Windows uninstall registry, patches per-instance config JSON via real parsing (not text replacement), writes `.bak` files before first mutation, supports `--dry-run` and `--edition global\|chinese\|all`. |
 | **[bluestacks-air-oneclick-root](https://github.com/Jordan231111/bluestacks-air-oneclick-root)** | Bash · macOS | BlueStacks Air on macOS. SIP-aware: separate code paths for SIP-enabled and SIP-disabled systems. |
+
+## Leadership
+
+**RCOS Project Lead — MalwareMinimizer** *(Spring 2026)* · Rensselaer Center for Open Source
+- Led a 5-person team (plus 3 external contributors) shipping a cross-platform Rust security tool to a demoable Spring 2026 MVP.
+- Owned architecture, CI/CD, and database/update workflow; partner roles covered scanner/quarantine (Riley), CLI (Isaac), utilities (Michael), setup/docs (Alexander).
+- Built an onboarding track with auto-graded starter tasks for new Rust contributors; maintained `validate_strict.sh` and CODEOWNERS to keep the repo consistent without lowering the review bar.
+- Presented at the RCOS Spring 2026 showcase.
+
+**Junior Director of Technology — HackRPI** *(Oct 2024 – Present)*
+- Drive the technical roadmap for HackRPI.com — architecture, registration flows, schedule reliability, performance — for 500+ event participants.
+- Lead 3+ project leads and 20+ organizers via status check-ins and pull-request code reviews.
+- Partner with the Director of Technology on feature rollouts, deployment cadence, and tooling upgrades.
 
 ## Broader Software Work
 
@@ -46,6 +59,10 @@ Playwright, GitHub Actions.
 
 **[CommUnity](https://github.com/Jordan231111/CommUnity)** — Full-stack civic-tech app: HTML/CSS/JS
 front-end, Firebase auth/db, Flask back-end, OpenAI API for AI-assisted outreach workflows.
+
+## Certifications
+
+**AWS Certified Cloud Practitioner** — Issued Jul 2023, valid through Jul 2026
 
 ## Stack
 
