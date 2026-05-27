@@ -21,6 +21,7 @@ https://github.com/Jordan231111/android-game-runtime-portfolio
 | Project | Focus |
 | --- | --- |
 | [Archero-LSPOSED-Mod](https://github.com/Jordan231111/Archero-LSPOSED-Mod) | Unity IL2CPP Android runtime hooks, native C++ game-loop instrumentation, metadata-based resolution, movement/collision/projectile systems, device-verified hook status. |
+| [ae-pcd-stamp-tracer-public](https://github.com/Jordan231111/ae-pcd-stamp-tracer-public) | Public case study for my private Cocos2d-x/Lua + native Android runtime instrumentation research. |
 | [arm64-houdini-lsposed-framework](https://github.com/Jordan231111/arm64-houdini-lsposed-framework) | ARM64 guest-code instrumentation framework for native-bridge / Houdini emulator environments, alias-aware patching, module scanning, verifier workflows. |
 | [lsposed-universal-template](https://github.com/Jordan231111/lsposed-universal-template) | Reusable LSPosed/Xposed runtime instrumentation scaffold with engine detection, native utilities, overlay controls, and feature toggles. |
 | [BluestacksRoot](https://github.com/Jordan231111/BluestacksRoot) | Android emulator/root automation, Magisk setup, and repeatable device-tooling workflows. |
@@ -64,4 +65,3 @@ Repository: https://github.com/Jordan231111/CommUnity
 
 - LinkedIn: https://www.linkedin.com/in/jordan-ye-100b86237/
 - GitHub: https://github.com/Jordan231111
-
