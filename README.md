@@ -19,12 +19,12 @@ runtime-instrumentation work, plus active AI model-evaluation contract work thro
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&include_all_commits=true&count_private=true&show=reviews,prs_merged_percentage&theme=tokyonight&v=4" />
-  <img width="49%" alt="Jordan Ye's GitHub stats" src="https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&include_all_commits=true&count_private=true&show=reviews,prs_merged_percentage&theme=default&v=4" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&include_all_commits=true&count_private=true&show=prs_merged,prs_merged_percentage&theme=tokyonight&v=5" />
+  <img width="49%" alt="Jordan Ye's GitHub stats" src="https://github-readme-stats-jordan231111.vercel.app/api?username=jordan231111&show_icons=true&include_all_commits=true&count_private=true&show=prs_merged,prs_merged_percentage&theme=default&v=5" />
 </picture>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&exclude_repo=BluestacksRoot&card_width=315&theme=tokyonight&v=4" />
-  <img width="49%" alt="Most used languages" src="https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&exclude_repo=BluestacksRoot&card_width=315&theme=default&v=4" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&exclude_repo=BluestacksRoot&card_width=315&theme=tokyonight&v=5" />
+  <img width="49%" alt="Most used languages" src="https://github-readme-stats-jordan231111.vercel.app/api/top-langs/?username=jordan231111&layout=compact&exclude_repo=BluestacksRoot&card_width=315&theme=default&v=5" />
 </picture>
 
 </div>
