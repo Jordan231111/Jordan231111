@@ -33,5 +33,5 @@ runtime-instrumentation work, plus active AI model-evaluation contract work thro
 
 ## Contact
 
-- **Email** — yejordan8888@gmail.com
+- **Email** — yejordan@yahoo.com
 - **LinkedIn** — [jordan-ye-100b86237](https://www.linkedin.com/in/jordan-ye-100b86237/)
